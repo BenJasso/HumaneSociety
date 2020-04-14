@@ -170,14 +170,17 @@ namespace HumaneSociety
         }
 
         // TODO: Animal CRUD Operations
-        internal static void AddAnimal(Animal animal)
+        internal static void AddAnimal(Animal animal)//done
         {
-            throw new NotImplementedException();
+            Animal newAnimal = animal;
+            db.Animals.InsertOnSubmit(newAnimal);
+            db.SubmitChanges();
         }
 
-        internal static Animal GetAnimalByID(int id)
+        internal static Animal GetAnimalByID(int id)//done
         {
-            throw new NotImplementedException();
+            Animal animal = db.Animals.Where(a => a.AnimalId == id).Single();
+            return animal;
         }
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
@@ -215,7 +218,7 @@ namespace HumaneSociety
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
         {
-            throw new NotImplementedException();
+            
         }
 
         internal static IQueryable<Adoption> GetPendingAdoptions()
