@@ -248,7 +248,8 @@ namespace HumaneSociety
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
         {
-            throw new NotImplementedException();
+            IQueryable<AnimalShot> animalShots = db.AnimalShots.Where(a => a.AnimalId == animal.AnimalId);
+            return animalShots;
         }
 
         internal static void UpdateShot(string shotName, Animal animal)
