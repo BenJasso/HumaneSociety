@@ -188,9 +188,11 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static void RemoveAnimal(Animal animal)
+        internal static void RemoveAnimal(Animal animal)//done
         {
-            throw new NotImplementedException();
+            Animal newAnimal = animal;
+            db.Animals.DeleteOnSubmit(animal);
+            db.SubmitChanges();
         }
         
         // TODO: Animal Multi-Trait Search
@@ -200,9 +202,10 @@ namespace HumaneSociety
         }
          
         // TODO: Misc Animal Things
-        internal static int GetCategoryId(string categoryName)
+        internal static int GetCategoryId(string categoryName)//done
         {
-            throw new NotImplementedException();
+            Category category = db.Categories.Where(c => c.Name == categoryName).Single();
+            return category.CategoryId;
         }
         
         internal static Room GetRoom(int animalId)
@@ -220,7 +223,11 @@ namespace HumaneSociety
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
         {
-            
+            Adoption adoption = new Adoption();
+            adoption.Animal = animal;
+            adoption.Client = client;
+            db.Adoptions.InsertOnSubmit(adoption);
+            db.SubmitChanges();
         }
 
         internal static IQueryable<Adoption> GetPendingAdoptions()

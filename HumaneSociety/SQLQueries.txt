@@ -1,0 +1,305 @@
+Employees
+
+INSERT INTO dbo.Employees (FirstName, LastName, UserName, Password, EmployeeNumber, Email)
+VALUES
+(	'Ben',
+	'Jasso',
+	'BenJasso23',
+	'Shelby123',
+	'2',
+	'Benjaminjasso@icloud.com'
+	);
+
+
+INSERT INTO dbo.Employees (FirstName, LastName, UserName, Password, EmployeeNumber, Email)
+VALUES
+(	'Adam',
+	'Connolly',
+	'AdamConnolly03',
+	'GrassisGreen03',
+	'1',
+	'AdamConnolly@icloud.com'
+	);
+INSERT INTO dbo.Employees (FirstName, LastName, UserName, Password, EmployeeNumber, Email)
+VALUES
+(	'Anita',
+	'Bath',
+	'AnitaBath55',
+	'SpilledMilk21',
+	'3',
+	'AnitaBath@icloud.com'
+	);
+INSERT INTO dbo.Employees (FirstName, LastName, UserName, Password, EmployeeNumber, Email)
+VALUES
+(	'Justin',
+	'Tyme',
+	'JustinTyme07',
+	'SunShine33',
+	'4',
+	'JustinTyme@icloud.com'
+	);
+INSERT INTO dbo.Employees (FirstName, LastName, UserName, Password, EmployeeNumber, Email)
+VALUES
+(	'Dan',
+	'Gleesack',
+	'DanGleesack',
+	'ColdSummer81',
+	'5',
+	'DanGleesack@icloud.com'
+	);
+
+Clients
+INSERT INTO dbo.Clients (FirstName, LastName, UserName, Password, AddressId, Email)
+VALUES 
+(	'Ben',
+	'Dover',
+	'BenDover41',
+	'Fabolous67',
+	'1',
+	'Bendover@icloud.com'
+	);
+INSERT INTO dbo.Clients (FirstName, LastName, UserName, Password, AddressId, Email)
+VALUES 
+(	'Peter',
+	'File',
+	'PeterFile08',
+	'Boyscouts67',
+	'3',
+	'PeterFile@icloud.com'
+	);
+INSERT INTO dbo.Clients (FirstName, LastName, UserName, Password, AddressId, Email)
+VALUES 
+(	'Rob',
+	'Banks',
+	'RobBanks54',
+	'HitnRun33',
+	'2',
+	'RobBanks@gmail.com'
+	);
+INSERT INTO dbo.Clients (FirstName, LastName, UserName, Password, AddressId, Email)
+VALUES 
+(	'Isaac',
+	'James',
+	'IsaacJames77',
+	'ManRunning1',
+	'5',
+	'RobBanks@gmail.com'
+	);
+INSERT INTO dbo.Clients (FirstName, LastName, UserName, Password, AddressId, Email)
+VALUES 
+(	'Evelyn',
+	'Riios',
+	'EvelynRiios96',
+	'PrettyFace32',
+	'4',
+	'EvelynRiios@ymail.com'
+	);
+
+Addresses
+INSERT INTO dbo.Addresses (AddressLine1, City, USStateId, Zipcode)
+VALUES 
+(	'420 N. High St.',
+	'Milwaukee',
+	'49',
+	'53220'
+	);
+INSERT INTO dbo.Addresses (AddressLine1, City, USStateId, Zipcode)
+VALUES 
+(	'4589 S. Kimberly Ave',
+	'Milwaukee',
+	'49',
+	'53154'
+	);
+INSERT INTO dbo.Addresses (AddressLine1, City, USStateId, Zipcode)
+VALUES 
+(	'7621 S. Tripoli Ave',
+	'Milwaukee',
+	'49',
+	'53221'
+	);
+INSERT INTO dbo.Addresses (AddressLine1, City, USStateId, Zipcode)
+VALUES 
+(	'4532 S. Katherine Dr',
+	'Oak Creek',
+	'49',
+	'53154'
+	);
+INSERT INTO dbo.Addresses (AddressLine1, City, USStateId, Zipcode)
+VALUES 
+(	'9322 N. Ohio St',
+	'Milwaukee',
+	'49',
+	'53220'
+	);
+
+DIET PLANS
+
+INSERT INTO dbo.DietPlans(Name, FoodType, FoodAmountInCups)
+VALUES(  'Young_Growth',
+         'Dry',
+         '3'
+         );
+INSERT INTO dbo.DietPlans(Name, FoodType, FoodAmountInCups)
+VALUES(  'Young_Maintenance',
+         'Dry',
+         '2'
+         );
+INSERT INTO dbo.DietPlans(Name, FoodType, FoodAmountInCups)
+VALUES(  'Adult_Growth',
+         'Dry/Wet',
+         '3'
+         );
+INSERT INTO dbo.DietPlans(Name, FoodType, FoodAmountInCups)
+VALUES(  'Adult_Maintenance',
+         'Raw',
+         '2'
+         );
+INSERT INTO dbo.DietPlans(Name, FoodType, FoodAmountInCups)
+VALUES(  'Adult_WeightLoss',
+         'Dry',
+         '1'
+         );
+ROOMS
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'1',
+	'1'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'2',
+	'1'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'3',
+	'2'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'4',
+	'2'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'5',
+	'3'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'6',
+	'3'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'7',
+	'4'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'8',
+	'4'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'9',
+	'5'
+	);
+INSERT INTO dbo.Rooms (RoomNumber, AnimalId)
+VALUES 
+(	'10',
+	'5'
+	);
+CATEGORIES
+INSERT INTO dbo.Categories(Name)
+VALUES
+(
+      'Canine'
+      );
+INSERT INTO dbo.Categories(Name)
+VALUES
+(
+      'Feline'
+      );
+INSERT INTO dbo.Categories(Name)
+VALUES
+(
+      'Avian'
+      );
+INSERT INTO dbo.Categories(Name)
+VALUES
+(
+      'Reptile'
+      );
+INSERT INTO dbo.Categories(Name)
+VALUES
+(
+      'Misc.'
+      );
+ANIMALS
+INSERT INTO dbo.Animals(Name, Weight, Age, Demeanor, KidFriendly, PetFriendly, Gender, AdoptionStatus, CategoryId, DietPlanId, EmployeeId)
+VALUES( 'Arlo',
+'65',
+'3',
+'Dopey',
+'1',
+'1',
+'Male',
+'Adopted',
+'1',
+'5',
+'5'
+);
+INSERT INTO dbo.Animals(Name, Weight, Age, Demeanor, KidFriendly, PetFriendly, Gender, AdoptionStatus, CategoryId, DietPlanId, EmployeeId)
+VALUES( 'Wynnie',
+'11',
+'5',
+'Lazy',
+'1',
+'0',
+'Female',
+'Pending',
+'2',
+'4',
+'3'
+);
+INSERT INTO dbo.Animals(Name, Weight, Age, Demeanor, KidFriendly, PetFriendly, Gender, AdoptionStatus, CategoryId, DietPlanId, EmployeeId)
+VALUES( 'Finley',
+'2',
+'7',
+'Aggressive',
+'0',
+'0',
+'Male',
+'Available',
+'3',
+'6',
+'1'
+);
+INSERT INTO dbo.Animals(Name, Weight, Age, Demeanor, KidFriendly, PetFriendly, Gender, AdoptionStatus, CategoryId, DietPlanId, EmployeeId)
+VALUES( 'Edgar',
+'8',
+'4',
+'Happy',
+'1',
+'1',
+'Female',
+'Pending',
+'4',
+'5',
+'2'
+);
+INSERT INTO dbo.Animals(Name, Weight, Age, Demeanor, KidFriendly, PetFriendly, Gender, AdoptionStatus, CategoryId, DietPlanId, EmployeeId)
+VALUES( 'Bauer',
+'3',
+'1',
+'Timid',
+'0',
+'0',
+'Male',
+'Available',
+'5',
+'1',
+'4'
+);
+
