@@ -224,6 +224,7 @@ namespace HumaneSociety
         internal static void Adopt(Animal animal, Client client)//done
         {
             Adoption adoption = new Adoption();
+            animal.AdoptionStatus = "Pending";
             adoption.Animal = animal;
             adoption.Client = client;
             adoption.ApprovalStatus = "Pending";
@@ -244,9 +245,12 @@ namespace HumaneSociety
             {
                 adoption.ApprovalStatus = "Adopted";
                 adoption.PaymentCollected = true;
+                adoption.Animal.AdoptionStatus = "Adopted";
+
             }
             else
             {
+                adoption.Animal.AdoptionStatus = "Available";
                 adoption.ApprovalStatus = "Denied";
                 adoption.PaymentCollected = false;
             }
