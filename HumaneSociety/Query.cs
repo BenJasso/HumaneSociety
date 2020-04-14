@@ -277,6 +277,7 @@ namespace HumaneSociety
             Shot shot = db.Shots.Where(s => s.Name == shotName).Single();
             animalShot.ShotId = shot.ShotId;
             animalShot.DateReceived = DateTime.Today;
+            db.AnimalShots.InsertOnSubmit(animalShot);
         }
     }
 }
