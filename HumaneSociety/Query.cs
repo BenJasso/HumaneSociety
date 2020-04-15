@@ -184,8 +184,44 @@ namespace HumaneSociety
         }
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
-        {            
-            throw new NotImplementedException();
+        {
+
+            for (int i = 0; i < updates.Count; i++)
+            {
+                Animal animal = db.Animals.Where(a => a.AnimalId == animalId).Single();
+                
+                switch (updates.ElementAt(i).Key)
+                {
+                    case 1:
+                        animal.CategoryId = Convert.ToInt32(updates.ElementAt(i).Value);
+                        break;
+                    case 2:
+                        animal.Name = updates.ElementAt(i).Value;
+                       break;
+                    case 3:
+                        animal.Age = Convert.ToInt32(updates.ElementAt(i).Value);
+                        break;
+                    case 4:
+                        animal.Demeanor = updates.ElementAt(i).Value;
+                        break;
+                    case 5:
+                        animal.KidFriendly = Convert.ToBoolean(updates.ElementAt(i).Value);
+                        break;
+                    case 6:
+                        animal.PetFriendly = Convert.ToBoolean(updates.ElementAt(i).Value);
+                        break;
+                    case 7:
+                        animal.Weight = Convert.ToInt32(updates.ElementAt(i).Value);
+                        break;
+                    case 8:
+                        animal.AnimalId = Convert.ToInt32(updates.ElementAt(i).Value);
+                        break;
+
+                }
+                db.SubmitChanges();
+               
+            }
+
         }
 
         internal static void RemoveAnimal(Animal animal)//done
@@ -200,7 +236,6 @@ namespace HumaneSociety
         {
             throw new NotImplementedException();
         }
-         
         // TODO: Misc Animal Things
         internal static int GetCategoryId(string categoryName)//done
         {
@@ -241,18 +276,20 @@ namespace HumaneSociety
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
+            adoption = db.Adoptions.Where(a => a.AnimalId == adoption.AnimalId).Single();
             if(isAdopted == true)
             {
-                adoption.ApprovalStatus = "Adopted";
+                adoption.ApprovalStatus = "Approved";
                 adoption.PaymentCollected = true;
                 adoption.Animal.AdoptionStatus = "Adopted";
-
+                db.SubmitChanges();
             }
             else
             {
                 adoption.Animal.AdoptionStatus = "Available";
                 adoption.ApprovalStatus = "Denied";
                 adoption.PaymentCollected = false;
+                db.SubmitChanges();
             }
         }
 
