@@ -222,5 +222,11 @@ namespace HumaneSociety
             }
             return searchParameters;
         }
+        internal static void DisplayEmployeeInfo(Employee employee)
+        {
+            List<string> info = new List<string>() { employee.EmployeeId.ToString(), employee.EmployeeNumber.ToString(), employee.FirstName, employee.LastName, employee.Email };
+            DisplayUserOptions(info);
+            Console.ReadLine();
+        }
     }
 }

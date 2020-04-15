@@ -59,7 +59,7 @@ namespace HumaneSociety
             }
         }
 
-        private void UpdateEmployee()
+        public void UpdateEmployee()
         {
             Employee employee = new Employee();
             employee.FirstName = UserInterface.GetStringData("first name", "the employee's");
@@ -79,7 +79,7 @@ namespace HumaneSociety
             }
         }
 
-        private void ReadEmployee()
+        public void ReadEmployee()
         {
             try
             {
@@ -95,7 +95,7 @@ namespace HumaneSociety
             }
         }
 
-        private void RemoveEmployee()
+        public void RemoveEmployee()
         {
             Employee employee = new Employee();
             employee.LastName = UserInterface.GetStringData("last name", "the employee's"); ;
@@ -114,7 +114,7 @@ namespace HumaneSociety
             }
         }
 
-        private void AddEmployee()
+        public void AddEmployee()
         {
             Employee employee = new Employee();
             employee.FirstName = UserInterface.GetStringData("first name", "the employee's");
