@@ -245,8 +245,7 @@ namespace HumaneSociety
             {
                 adoption.ApprovalStatus = "Adopted";
                 adoption.PaymentCollected = true;
-                adoption.Animal.AdoptionStatus = "Adopted";
-
+                adoption.Animal.AdoptionStatus = "Adopted";               
             }
             else
             {
