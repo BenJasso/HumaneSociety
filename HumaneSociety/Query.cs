@@ -281,8 +281,11 @@ namespace HumaneSociety
             {
                 adoption.ApprovalStatus = "Approved";
                 adoption.PaymentCollected = true;
+
                 adoption.Animal.AdoptionStatus = "Adopted";
                 db.SubmitChanges();
+
+              
             }
             else
             {
