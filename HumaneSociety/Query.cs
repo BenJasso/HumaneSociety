@@ -234,7 +234,7 @@ namespace HumaneSociety
         // TODO: Animal Multi-Trait Search
         internal static IQueryable<Animal> SearchForAnimalsByMultipleTraits(Dictionary<int, string> updates) // parameter(s)?
         {
-            throw new NotImplementedException();
+            
         }
         // TODO: Misc Animal Things
         internal static int GetCategoryId(string categoryName)//done
