@@ -257,7 +257,58 @@ namespace HumaneSociety
         // TODO: Animal Multi-Trait Search
         internal static IQueryable<Animal> SearchForAnimalsByMultipleTraits(Dictionary<int, string> updates) // parameter(s)?
         {
+            var animals = db.Animals;
+            List<Animal> animalsFromSearch = new List<Animal>();
+           
+            foreach (var animal in animals)
+            {
+                animalsFromSearch.Add(animal);
+            }
             
+            for (int i = 0; i < updates.Count; i++)
+            {
+                
+                switch (updates.ElementAt(i).Key)
+                {
+                    case 1:
+                        var animalsToRemove = db.Animals.Where(a => a.CategoryId != Convert.ToInt32(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 2:
+                        animalsToRemove = db.Animals.Where(a => a.Name != updates.ElementAt(i).Value);
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 3:
+                        animalsToRemove = db.Animals.Where(a => a.Age != Convert.ToInt32(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 4:
+                        animalsToRemove = db.Animals.Where(a => a.Demeanor != updates.ElementAt(i).Value);
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 5:
+                        animalsToRemove = db.Animals.Where(a => a.KidFriendly != Convert.ToBoolean(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 6:
+                        animalsToRemove = db.Animals.Where(a => a.PetFriendly != Convert.ToBoolean(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 7:
+                        animalsToRemove = db.Animals.Where(a => a.Weight != Convert.ToInt32(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+                    case 8:
+                        animalsToRemove = db.Animals.Where(a => a.AnimalId != Convert.ToInt32(updates.ElementAt(i).Value));
+                        animalsFromSearch = animalsFromSearch.Except(animalsToRemove).ToList();
+                        break;
+
+                }
+                
+
+            }
+            var querable = animalsFromSearch.AsQueryable();
+            return querable;
         }
         // TODO: Misc Animal Things
         internal static int GetCategoryId(string categoryName)//done
